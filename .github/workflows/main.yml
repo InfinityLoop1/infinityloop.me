@@ -1,0 +1,43 @@
+name: Discord Push Notifications
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build commit list
+        id: commits
+        run: |
+          COMMIT_TEXT=""
+          while read commit; do
+            MSG=$(echo "$commit" | jq -r '.message')
+            URL=$(echo "$commit" | jq -r '.url')
+
+            # Skip commits starting with "Merge branch"
+            if [[ "$MSG" == Merge\ branch* ]]; then
+              continue
+            fi
+            
+            COMMIT_TEXT="${COMMIT_TEXT}- [$MSG]($URL)
+          "
+          done < <(jq -c '.commits[]' < "${GITHUB_EVENT_PATH}")
+
+          # Write output for later steps
+          echo "commit_text<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMIT_TEXT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send commits to Discord
+        uses: sarisia/actions-status-discord@v1.15.4
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "New Update"
+          description: |
+            **New push to ${{ github.ref_name }}**
+            ${{ steps.commits.outputs.commit_text }}
+          noprefix: true
+          nocontext: true
+          content: "<@&1411181618307137628>"
