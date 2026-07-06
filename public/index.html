@@ -1,157 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <!-- Meta  -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="InfinityLoop - Frontend web developer, Unity game designer, and electronic music producer." />
-        <meta name="author" content="InfinityLoop" />
-        <meta name="keywords" content="InfinityLoop, web developer, Unity, game designer, music producer, portfolio" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content="#149CEA" />
-        <meta property="og:title" content="InfinityLoop" />
-        <meta property="og:description" content="Frontend web developer, Unity game designer, and electronic music producer." />
-        <meta property="og:image" content="/assets/images/infinity.svg" />
-        <meta property="og:type" content="website" />
-        <!-- End Meta -->
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
-        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
-        <!-- End Favicons-->
+  <head>
+    <!-- Meta  -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="InfinityLoop - Frontend web developer, Unity game designer, and electronic music producer." />
+    <meta name="author" content="InfinityLoop" />
+    <meta name="keywords" content="InfinityLoop, web developer, Unity, game designer, music producer, portfolio" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#149CEA" />
+    <meta property="og:title" content="InfinityLoop" />
+    <meta property="og:description" content="Frontend web developer, Unity game designer, and electronic music producer." />
+    <meta property="og:image" content="/assets/images/infinity.svg" />
+    <meta property="og:type" content="website" />
+    <!-- End Meta -->
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <!-- End Favicons-->
 
-        <title>InfinityLoop</title>
-        <link rel="stylesheet" href="/assets/styles/css/index.css" />
-        <link rel="stylesheet" href="/assets/styles/css/global.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    </head>
+    <title>InfinityLoop</title>
+    <link rel="stylesheet" href="/assets/styles/css/index.css" />
+    <link rel="stylesheet" href="/assets/styles/css/global.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
 
-    <body>
-        <div id="fog"></div>
+  <body>
+    <div id="fog"></div>
 
-        <canvas id="visualizer"></canvas>
-        <audio id="music" src="/assets/Helium_Extended.mp3" autoplay loop></audio>
+    <canvas id="visualizer"></canvas>
+    <audio id="music" src="/assets/tto.m4a" autoplay loop></audio>
 
-        <div class="i-header container">
-            <img src="/assets/images/infinity.svg" alt="InfinityLoop Logo" class="logo" />
-            <h1 id="name">InfinityLoop</h1>
-        </div>
-        <div class="flex-holder" id="second-row-top-container">
-            <div class="container second-row">
-                <h2>About Me</h2>
-                <div style="display: flex; flex-direction: row">
-                    <div style="width: 50%; height: 100%; padding: 10px;">
-                        <div class="flex-horiz" style="gap: 20px;">
-                            <img src="/assets/images/profile-picture.svg" alt="InfinityLoop Avatar" class="avatar-image" />
-                            <h2>Hi, I'm InfinityLoop</h2>
-                            
-                        </div>
-                        <ul style="list-style-type: disc;"></ul>
-                            <li>Web developer</li>
-                            <li>Unity game designer</li>
-                            <li>Electronic music producer</li>
-                            <li>Pianist and keyboardist</li>
-                            <li>Sophomore in high school with 5.0 GPA</li>
-                        </ul>
-                    </div>
-                    <div style="width: 50%; height: 100%; padding: 10px; text-align: center;">
-                        <h3>Skills and Tools</h3>
-                        <div class="icon-container">
-                            <img src="/assets/images/icons/tools/Arduino.svg" alt="Arduino" />
-                            <img src="/assets/images/icons/tools/Blender.svg" alt="Blender" />
-                            <img src="/assets/images/icons/tools/CS.svg" alt="C#" />
-                            <img src="/assets/images/icons/tools/CSS.svg" alt="CSS" />
-                            <img src="/assets/images/icons/tools/FLStudio.svg" alt="FL Studio" />
-                            <img src="/assets/images/icons/tools/Git.svg" alt="Git" />
-                            <img src="/assets/images/icons/tools/HTML.svg" alt="HTML" />
-                            <img src="/assets/images/icons/tools/JavaScript.svg" alt="JavaScript" />
-                            <img src="/assets/images/icons/tools/Python.svg" alt="Python" />
-                            <img src="/assets/images/icons/tools/RaspberryPi.svg" alt="Raspberry Pi" />
-                            <img src="/assets/images/icons/tools/Sass.svg" alt="Sass" />
-                            <img src="/assets/images/icons/tools/Unity.svg" alt="Unity" />
-                            <img src="/assets/images/icons/tools/VisualStudio.svg" alt="Visual Studio" />
-                            <img src="/assets/images/icons/tools/VSCode.svg" alt="Visual Studio Code" />
-                        </div>
-                        <!--<h3>Socials</h3>
-                        <div class="icon-container">
-                            <a href="https://discord.com/users/1184305500062502996" target="_blank"><img src="/assets/images/icons/socials/discord.png" alt="Discord Link" /></a>
-                            <a href="https://github.com/InfinityLoop1" target="_blank"><img src="/assets/images/icons/socials/github.png" alt="GitHub Link" /></a>
-                            <a href="https://github.com/InfinityLoop5" target="_blank"><img src="/assets/images/icons/socials/gitlab.png" alt="GitLab Link" /></a>
-                            <a href="https://open.spotify.com/artist/6AD2E3l8Az67OnlbsWG5Fb" target="_blank"><img src="/assets/images/icons/socials/spotify.png" alt="Spotify Link" /></a>
-                        </div>-->
-                    </div>
-                </div>
+    <div class="i-header container">
+      <img src="/assets/images/infinity.svg" alt="InfinityLoop Logo" class="logo" />
+      <h1 id="name">InfinityLoop</h1>
+    </div>
+    <main class="page-content">
+      <section class="flex-holder hero-grid" id="second-row-top-container">
+        <div class="container second-row about-card">
+          <div class="hero-title-row">
+            <img src="/assets/images/profile-picture.svg" alt="InfinityLoop Avatar" class="avatar-image" />
+            <div>
+              <p class="eyebrow">About</p>
+              <h2>Web developer and music producer</h2>
             </div>
+          </div>
 
-            <div class="container second-row">
-                <h2>Activity</h2>
-                <p id="statusText">Loading...</p>
-                <div id="discord-activity-container">
-                    <h3>Discord</h3>
-                    <div id="discord-activity-content">
-                        <img id="discord-pfp" class="avatar-image" />
-                        <div id="discord-activity-text-container">
-                            <p id="discord-username-text">Loading...</p>
-                            <small id="discord-status-text">Loading...</small>
-                            <p id="discord-activity-text">Loading...</p>
-                        </div>
-                    </div>
-                    <small>Thanks for help with Discord activity code from <a href="https://bio.opensourcedtech.com/">oscisadev</a></small>
-                </div>
-            </div>
-        </div>
-        <div class="flex-holder">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-container">
-                    <img class="project-image" src="/assets/images/projects/Mathima.jpg" />
-                    <div class="project-text">
-                        <h1>Mathima</h1>
-                        <p>A smart and simple planner designed for students. Easily track homework, quizzes, and due dates using either exact times or your class schedule. With built-in support for your daily schedule, Mathima helps you stay organized in a way that actually fits your school day.</p>
-                        <b style="color: #ffff99">Owner - Active Development - Unfinished</b>
-                    </div>
-                    <button class="project-button" onclick="window.open('https://mathima.infinityloop.me', '_blank')">View Project <span class="material-symbols-rounded">open_in_new</span></button>
-                </div>
-                <div class="project-container">
-                    <img class="project-image" src="/assets/images/projects/Vortex.png" />
-                    <div class="project-text">
-                        <h1>Vortex</h1>
-                        <p>A Modern and Secure Messaging Platform for Schools</p>
-                        <b style="color: #99ff99">General Developer - Active Development</b>
-                    </div>
-                    <button class="project-button" onclick="window.open('https://vtx.chat', '_blank')">View Project <span class="material-symbols-rounded">open_in_new</span></button>
-                </div>
-            </div>
-            
-        </div>
-        <div id="musiccontrols"><small id="nowplaying">Now Playing: Helium (Extended) by Half of Infinity</small> <span class="material-symbols-rounded" id="mutecontrol">volume_up</span></div>
-        <div id="musicprompt">
-            <p>Click anywhere to enter</p>
-            <small>Required due to audio start permissions :(</small>
-        </div>
-        <script src="/assets/js/index.js"></script>
-        <script src="/assets/js/global.js"></script>
-        <script src="/assets/js/discord.js"></script>
+          <div class="info-grid-3">
+            <section class="info-panel">
+              <h3>About Me</h3>
+              <ul class="clean-list">
+                <li>Frontend web developer</li>
+                <li>Electronic music producer</li>
+                <li>Pianist and keyboardist</li>
+                <li>Junior in high school</li>
+              </ul>
+            </section>
 
-        <script src="/assets/resources/vanta/three.js"></script>
-        <script src="/assets/resources/vanta/fog.js"></script>
-        <script>
-            VANTA.FOG({
-                el: "#fog",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.0,
-                minWidth: 200.0,
-                highlightColor: 0x1c2c,
-                midtoneColor: 0x1129,
-                lowlightColor: 0x1f,
-                baseColor: 0xe,
-                blurFactor: 0.7,
-                speed: 0.7,
-                zoom: 3.0,
-            });
-        </script>
-    </body>
+            <section class="info-panel">
+              <h3>Skills and Tools</h3>
+              <div class="icon-container">
+                <img src="/assets/images/icons/tools/Arduino.svg" alt="Arduino" />
+                <img src="/assets/images/icons/tools/Blender.svg" alt="Blender" />
+                <img src="/assets/images/icons/tools/CS.svg" alt="C#" />
+                <img src="/assets/images/icons/tools/CSS.svg" alt="CSS" />
+                <img src="/assets/images/icons/tools/FLStudio.svg" alt="FL Studio" />
+                <img src="/assets/images/icons/tools/Git.svg" alt="Git" />
+                <img src="/assets/images/icons/tools/HTML.svg" alt="HTML" />
+                <img src="/assets/images/icons/tools/JavaScript.svg" alt="JavaScript" />
+                <img src="/assets/images/icons/tools/Python.svg" alt="Python" />
+                <img src="/assets/images/icons/tools/RaspberryPi.svg" alt="Raspberry Pi" />
+                <img src="/assets/images/icons/tools/Sass.svg" alt="Sass" />
+                <img src="/assets/images/icons/tools/Unity.svg" alt="Unity" />
+                <img src="/assets/images/icons/tools/VisualStudio.svg" alt="Visual Studio" />
+                <img src="/assets/images/icons/tools/VSCode.svg" alt="Visual Studio Code" />
+              </div>
+            </section>
+
+            <section class="info-panel">
+              <h3>Activity</h3>
+              <p class="panel-note" id="statusText">Loading...</p>
+              <div class="social-row">
+                <a href="https://github.com/InfinityLoop1" target="_blank"><img src="/assets/images/icons/socials/github.png" alt="GitHub Link" /></a>
+                <a href="https://github.com/InfinityLoop5" target="_blank"><img src="/assets/images/icons/socials/gitlab.png" alt="GitLab Link" /></a>
+                <a href="https://open.spotify.com/artist/6AD2E3l8Az67OnlbsWG5Fb" target="_blank"><img src="/assets/images/icons/socials/spotify.png" alt="Spotify Link" /></a>
+                <a href="https://discord.com/users/1184305500062502996" target="_blank"><img src="/assets/images/icons/socials/discord.png" alt="Discord Link" /></a>
+                <a href="https://bsky.app/profile/infinityloopdev.bsky.social" target="_blank"><img src="/assets/images/icons/socials/bsky.svg" alt="Bluesky Link" /></a>
+              </div>
+            </section>
+          </div>
+          <br />
+          <div class="info-grid-2">
+            <section class="info-panel">
+              <h3>Discord Server</h3>
+              <p class="panel-note">Join the my Discord server to chat with me and other fans of my work. I post updates about my projects and music there.</p>
+              <button class="project-button" onclick="window.open('https://discord.gg/7WNTMJxETv', '_blank')">
+                Join
+                <span class="material-symbols-rounded">open_in_new</span>
+              </button>
+            </section>
+
+            <section class="info-panel">
+              <h3>Youtube Channel</h3>
+              <p class="panel-note">Subscribe to my Youtube channel to watch videos about my projects, music, and other interests.</p>
+              <button class="project-button" onclick="window.open('https://www.youtube.com/channel/UCweYOYgazOo5nyPQ3UwbOEQ', '_blank')">
+                Subscribe
+                <span class="material-symbols-rounded">open_in_new</span>
+              </button>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex-holder">
+        <div class="container project-section">
+          <h2>Projects</h2>
+          <div class="project-container">
+            <img class="project-image" src="/assets/images/projects/Mathima.jpg" alt="Mathima project preview" />
+            <div class="project-text">
+              <h3>Mathima</h3>
+              <p>A smart and simple planner designed for students. Easily track homework, quizzes, and due dates using either exact times or your class schedule. With built-in support for your daily schedule, Mathima helps you stay organized in a way that actually fits your school day.</p>
+              <b class="project-meta project-meta--warning"> Owner - Paused Development - Unfinished </b>
+            </div>
+            <button class="project-button" onclick="window.open('https://mathima.infinityloop.me', '_blank')">
+              View Project
+              <span class="material-symbols-rounded">open_in_new</span>
+            </button>
+          </div>
+          <div class="project-container">
+            <img class="project-image" src="/assets/images/projects/LupineVault.png" alt="LupineVault project preview" />
+            <div class="project-text">
+              <h3>LupineVault</h3>
+              <p>An all-in-one games, movies, and proxy platform for students.</p>
+              <b class="project-meta project-meta--alert"> Co-Owner - Shut Down </b>
+            </div>
+            <button class="project-button button--disabled" disabled>
+              View Project
+              <span class="material-symbols-rounded">open_in_new</span>
+            </button>
+          </div>
+          <div class="project-container">
+            <img class="project-image" src="/assets/images/projects/Vortex.png" alt="Vortex project preview" />
+            <div class="project-text">
+              <h3>Vortex</h3>
+              <p>A Modern and Secure Messaging Platform for Schools</p>
+              <b class="project-meta project-meta--alert"> Former Developer </b>
+            </div>
+            <button class="project-button" onclick="window.open('https://vtx.chat', '_blank')">
+              View Project
+              <span class="material-symbols-rounded">open_in_new</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex-holder">
+        <div class="container discography-section">
+          <h2>Discography</h2>
+
+          <div class="discography-grid">
+            <article class="release-card release-card--featured" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/tto.jpg" alt="Take This Out! Artwork" />
+                </div>
+                <div class="release-body">
+                  <p class="release-kicker">Featured release</p>
+                  <h3>Take This Out!</h3>
+                  <p class="release-type">Single</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Breakcore</span>
+                    <span class="release-tag">Intense</span>
+                    <span class="release-tag">Fast</span>
+                  </div>
+                  <p class="release-date">July 1st, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/track/0WDdOXmstNRtGu6MSkBICG" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/watch?v=w7ZELLqKvPw" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/sp.jpg" alt="SUCKERPUNCH Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>SUCKERPUNCH</h3>
+                  <p class="release-type">Album</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Electronic</span>
+                    <span class="release-tag">EDM</span>
+                    <span class="release-tag">Breakcore</span>
+                  </div>
+                  <p class="release-date">April 24th, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/0nJo2qZmNLdJJvoRnOMGL8" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://youtube.com/playlist?list=OLAK5uy_no7CRtiIhDaM9e0Vy0Dh-M9Hy0-er5s1Y" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/iaasiwf.jpg" alt="Ifanyoneaskssayitwasforgotten Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Ifanyoneaskssayitwasforgotten</h3>
+                  <p class="release-type">EP</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Experimental</span>
+                    <span class="release-tag">Electronic</span>
+                    <span class="release-tag">Ambient</span>
+                  </div>
+                  <p class="release-date">February 25th, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/0SA660sI6jbsycJtArVAww" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_lvBXwDmel2zj6M1NHJ6m7jOwVhmy3kZzU" target="_blank"> YouTube </a>
+                <a class="release-link" href="https://music.apple.com/us/album/ifanyoneaskssayitwasforgotten-ep/1878367528" target="_blank"> Apple Music </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/liar.jpg" alt="LIAR Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>LIAR</h3>
+                  <p class="release-type">Single</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Breakcore</span>
+                    <span class="release-tag">Political</span>
+                    <span class="release-tag">Intense</span>
+                  </div>
+                  <p class="release-date">February 17th, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/0pRW2z7fIH0Q7mas4CqzaG" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_lFAPbX2XVvj8GS52vKscN2Pxtq9hzO250" target="_blank"> YouTube </a>
+                <a class="release-link" href="https://music.apple.com/us/album/liar-single/1876639666" target="_blank"> Apple Music </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/agitato.jpg" alt="Agitato Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Agitato</h3>
+                  <p class="release-type">Single</p>
+                  <div class="release-tags">
+                    <span class="release-tag">EDM</span>
+                    <span class="release-tag">Classical</span>
+                    <span class="release-tag">Remake</span>
+                  </div>
+                  <p class="release-date">January 26th, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/5EKIzKTemg9jdtG6RmonOD" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_lMXzvH5gnGl0DDrbfNAx8IleIqBPRQNjU" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/abbatoir.jpg" alt="Abbatoir Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Abbatoir</h3>
+                  <p class="release-type">Single</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Industrial</span>
+                    <span class="release-tag">Electronic</span>
+                    <span class="release-tag">Harsh</span>
+                  </div>
+                  <p class="release-date">January 26th, 2026</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/5EKIzKTemg9jdtG6RmonOD" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_kbh-C9pINDx1nFSzfDbA7GiQ96tolpgu8" target="_blank"> YouTube </a>
+                <a class="release-link" href="https://music.apple.com/us/album/abbatoir-single/1870508625" target="_blank"> Apple Music </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/he.jpg" alt="Helium - Extended Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Helium - Extended</h3>
+                  <p class="release-type">Single</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Electronic</span>
+                    <span class="release-tag">Remake</span>
+                    <span class="release-tag">Bouncy</span>
+                  </div>
+                  <p class="release-date">June 4th, 2025</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/3bKCxdZ6ys6FmsRzVeF3va" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_nupfimkWneMGYfF7A85H4f3_XK_OD-HbM" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/ev2.jpg" alt="Element - Volume 2 Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Element - Volume 2</h3>
+                  <p class="release-type">Album</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Electronic</span>
+                    <span class="release-tag">Experimental</span>
+                    <span class="release-tag">Instrumental</span>
+                  </div>
+                  <p class="release-date">September 18th, 2024</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/3BTsEgFdMd93OCGTgn86aE" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_kbYs9qefK93Tc4x7tANxyhXpsmvqD0EFk" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/ihtsb.jpg" alt="I've Heard That Song Before Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>I've Heard That Song Before</h3>
+                  <p class="release-type">EP</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Experimental</span>
+                    <span class="release-tag">Ambient</span>
+                    <span class="release-tag">Liminal</span>
+                  </div>
+                  <p class="release-date">June 12th, 2024</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/71OMIMrTtG7dE0bEuynZyo" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_nQp6fx2r-QfQk_6xTKKdWeEuZQoZfhH-w" target="_blank"> YouTube </a>
+              </div>
+            </article>
+            <article class="release-card" data-release-card>
+              <button class="release-card-button" type="button" data-release-toggle aria-expanded="false">
+                <div class="release-artwork release-artwork--featured">
+                  <img src="/assets/images/music/ev1.jpg" alt="Element - Volume 1 Artwork" />
+                </div>
+                <div class="release-body">
+                  <h3>Element - Volume 1</h3>
+                  <p class="release-type">EP</p>
+                  <div class="release-tags">
+                    <span class="release-tag">Experimental</span>
+                    <span class="release-tag">Instrumental</span>
+                    <span class="release-tag">Orchestral</span>
+                  </div>
+                  <p class="release-date">March 14th, 2024</p>
+                </div>
+              </button>
+              <div class="release-links-popover" data-release-menu hidden>
+                <a class="release-link" href="https://open.spotify.com/album/6cvxtuQJW7jhzpdxfqiv59" target="_blank"> Spotify </a>
+                <a class="release-link" href="https://www.youtube.com/playlist?list=OLAK5uy_mjcPWirO0EZ6MD7dYwrI1JElDoUWKAPsQ" target="_blank"> YouTube </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="musiccontrols">
+      <small id="nowplaying">Now Playing: Take This Out! by Half of Infinity</small>
+      <span class="material-symbols-rounded" id="mutecontrol">volume_up</span>
+    </div>
+    <div id="musicprompt">
+      <p>Click anywhere to enter</p>
+      <small>Required due to audio start permissions :(</small>
+    </div>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/global.js"></script>
+
+    <script src="/assets/resources/vanta/three.js"></script>
+    <script src="/assets/resources/vanta/fog.js"></script>
+    <script>
+      VANTA.FOG({
+        el: "#fog",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        highlightColor: 0x1c2c,
+        midtoneColor: 0x1129,
+        lowlightColor: 0x1f,
+        baseColor: 0xe,
+        blurFactor: 0.7,
+        speed: 0.7,
+        zoom: 3.0,
+      });
+    </script>
+  </body>
 </html>

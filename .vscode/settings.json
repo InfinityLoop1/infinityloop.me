@@ -13,5 +13,6 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "liveServer.settings.root": "/public"
+    "liveServer.settings.root": "/public",
+    "prettier.printWidth": 10000000
 }
